@@ -32,5 +32,9 @@ def system_test():
 def system_general_info():
     return jsonify(info)
 
+@app.route('/api/v1.0/post/echo', methods=['POST'])
+def post():
+    return jsonify(request.json)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5555)
