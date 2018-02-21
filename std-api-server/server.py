@@ -16,6 +16,14 @@ info = {
         'api-spec-version': api_spec_version,
         }
 
+@app.route('/system/test', methods=['GET'])
+def std_system_test():
+    return jsonify(test)
+
+@app.route('/system/info', methods=['GET'])
+def std_system_general_info():
+    return jsonify(info)
+
 @app.route('/api/v1.0/system/test', methods=['GET'])
 def system_test():
     return jsonify(test)
