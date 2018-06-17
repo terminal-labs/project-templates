@@ -29,8 +29,6 @@ jobs:
             source env/bin/activate
             python std-api-server/server.py
           background: true
-        
-      - run: sleep 30
       
       - run: 
           name: server tests
