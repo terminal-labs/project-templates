@@ -25,7 +25,9 @@ jobs:
             
       - run: 
           name: background server for tests
-          command: python std-api-server/server.py &
+          command: |
+            python std-api-server/server.py &
+            wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 10 http://localhost:5555
           background: true
         
       - run: 
