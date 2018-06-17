@@ -28,7 +28,7 @@ jobs:
           command: |
             source env/bin/activate
             python std-api-server/server.py &
-            wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 10 http://127.0.0.1:5555
+            sleep 30
           background: true
         
       - run: 
