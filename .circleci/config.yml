@@ -10,26 +10,26 @@ jobs:
       - checkout
 
       - run:
-          name: Install Dependencies
+          name: Install dependencies
           command: |
             bash .circleci/deps.sh
 
       - run:
-          name: Build Steps
+          name: Build steps
           command: |
             bash .circleci/builds.sh
             
       - run: 
-          name: Background Server For Tests
+          name: Background server for tests
           command: |
             source env/bin/activate
             python std-api-server/server.py
           background: true
         
       - run: 
-          name: Wait For Service To Start
+          name: Wait for service to start
           command: bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' 127.0.0.1:5555/system/test)" != "200" ]]; do sleep 1; done'
       
       - run: 
-          name: Server Tests
+          name: Server tests
           command: bash std-api-server/test.sh
