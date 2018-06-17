@@ -27,7 +27,7 @@ jobs:
           name: background server for tests
           command: |
             source env/bin/activate
-            python std-api-server/server.py &
+            python std-api-server/server.py
           background: true
         
       - run: sleep 30
