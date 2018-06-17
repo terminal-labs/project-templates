@@ -28,6 +28,7 @@ jobs:
           command: |
             source env/bin/activate
             python std-api-server/server.py
+            sleep 5
           background: true
       
       - run: 
