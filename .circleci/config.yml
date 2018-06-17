@@ -22,3 +22,12 @@ jobs:
           name: build steps
           command: |
             bash .circleci/builds.sh
+            
+      - run: 
+          name: background server for tests
+          command: python std-api-server/server.py &
+          background: true
+        
+      - run: 
+          name: server tests
+          command: bash std-api-server/test.sh
