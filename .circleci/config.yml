@@ -30,7 +30,7 @@ jobs:
             python std-api-server/server.py
           background: true
         
-      - run: bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' 127.0.0.1:5555)" != "200" ]]; do sleep 1; done'
+      - run: bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' 127.0.0.1:5555/system/test" != "200" ]]; do sleep 1; done'
       
       - run: 
           name: server tests
