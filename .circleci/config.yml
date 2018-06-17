@@ -1,7 +1,3 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
   build:
@@ -14,26 +10,26 @@ jobs:
       - checkout
 
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             bash .circleci/deps.sh
 
       - run:
-          name: build steps
+          name: Build Steps
           command: |
             bash .circleci/builds.sh
             
       - run: 
-          name: background server for tests
+          name: Background Server For Tests
           command: |
             source env/bin/activate
             python std-api-server/server.py
           background: true
         
       - run: 
-          name: wait for service to start
+          name: Wait For Service To Start
           command: bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' 127.0.0.1:5555/system/test)" != "200" ]]; do sleep 1; done'
       
       - run: 
-          name: server tests
+          name: Server Tests
           command: bash std-api-server/test.sh
