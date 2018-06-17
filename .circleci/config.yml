@@ -15,3 +15,13 @@ jobs:
 
       - setup_remote_docker:
           docker_layer_caching: true
+
+      - run:
+          name: install dependencies
+          command: |
+            bash .circleci/deps.sh
+
+      - run:
+          name: build steps
+          command: |
+            bash .circleci/builds.sh
