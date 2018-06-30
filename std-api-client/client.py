@@ -19,5 +19,8 @@ def call_server():
     r = requests.get(host + ':' + port + '/api/v1.0/system/info')
     print(r.text)
 
+    r = requests.post(host + ':' + port + '/api/v1.0/post/echo', json = {"username":"xyz","password":"xyz"})
+    print(r.text)
+
 if __name__ == '__main__':
     call_server()
