@@ -9,12 +9,12 @@ This is a CherryPy simple demo to printed Hello World on browser and receive tex
     
 2. Install the requirement dependencies
     ```
-        (env) pip install -r requirements.txt
+        (env) $ pip install -r requirements.txt
     ```
     
 3. Run
     ```
-        (env) python3 app.py
+        (env) $ python3 app.py
     ```
 4. Open 127.0.0.1:8080 on browser
 
