@@ -1,2 +1,0 @@
-https://mmikael.com/post/flask-factory/
-https://github.com/mikaelm1/flask-factory-click
