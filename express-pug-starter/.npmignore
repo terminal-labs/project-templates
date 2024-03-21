@@ -1,8 +1,0 @@
-**/.DS_Store
-**/.sass-cache
-*.sublime*
-.env
-app/dist
-coverage
-node_modules
-npm-debug.log
